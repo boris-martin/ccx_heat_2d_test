@@ -8,7 +8,7 @@ meshID = interface.get_mesh_id("Fluid-Mesh")
 vertex_size = 1
 
 coords = np.zeros((vertex_size, dim))
-coords[0, :] = np.array([0, 0, 0])
+coords[0, :] = np.array([0, 0])
 
 
 
