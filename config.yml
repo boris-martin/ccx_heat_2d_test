@@ -1,0 +1,10 @@
+participants:
+  # The configuration files for the Fluid-Inner and Fluid-Outer participants
+  # are located in each participant's directory.
+  Solid:
+    interfaces:
+    - nodes-mesh: Solid-Mesh
+      patch: xend
+      read-data: [Temperature]
+
+precice-config-file: ./precice-config.xml

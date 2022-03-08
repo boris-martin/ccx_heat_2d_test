@@ -4,8 +4,8 @@
 *INCLUDE, INPUT=./all.msh
 
 ** Define element set Eall
-*ELSET, ELSET=Eall
-Evolumes
+*ELSET, ELSET=Evolumes
+Eall
 
 
 
@@ -28,7 +28,7 @@ Evolumes
 *ELASTIC
 210000, 0.300
 *CONDUCTIVITY
-100.000
+10000.000
 *EXPANSION
 1.200e-05
 *SPECIFIC HEAT
@@ -42,16 +42,16 @@ Evolumes
 ** Initial temperature constraint
 ** written by write_constraints_initialtemperature function
 *INITIAL CONDITIONS,TYPE=TEMPERATURE
-Nall,300.0
+Nall, 300.0
 
 ***********************************************************
 ** Sections
 ** written by write_femelementsets function
-*SOLID SECTION, ELSET=MaterialSolidSolid, MATERIAL=MaterialSolid
+*SOLID SECTION, ELSET=Eall, MATERIAL=MaterialSolid
 
 ***********************************************************
-*STEP, INC=2000
-*DYNAMIC, ALPHA=0.0, DIRECT
+*STEP, INC=10000
+*HEAT TRANSFER, DIRECT
 1.E-2, 5.0
 
 ***********************************************************
@@ -61,9 +61,10 @@ Nall,300.0
 *BOUNDARY
 Nxbegin,11,11,300.0
 
+
 ** ConstraintTemperature001
 *BOUNDARY
-Nxend,11,11,320.0
+Nxend,11,11,330.0
 
 
 ***********************************************************
